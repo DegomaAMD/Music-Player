@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side-bar{
+  height: 100vh;
+  background-color: #3B3B3B;
+  color: #fff;
+  padding: 30px 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-content{
+  background-color: #1F1F1F;
+  color: #fff;
+  height: 100vh;
+  padding: 30px 50px !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-content .top-section{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.main-content.col-9 > div:nth-child(1) .search-bar-container > input{
+  max-width: 300px;
+  border: none;
+  border-radius: 99px;
+  background-color: #3B3B3B;
+  color: #fff;
+}
+.main-content.col-9 > div:nth-child(1) .search-bar-container > input::placeholder{
+  color: #fff;
+  font-size: 12px;
+  padding-left: 20px;
+  vertical-align: middle;
 }
 
-.App-link {
-  color: #61dafb;
+.main-content .top-section .search-bar-container{
+  position: relative;
+}
+.main-content .top-section .search-bar-container > .magnifying-icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 13px);
+  font-size: 12px;
+}
+.main-content .top-section .search-bar-container > .mic-icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-10px, 13px);
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-content .premium-banner{
+  padding: 20px 50px;
+  margin: 20px 0;
+  background: linear-gradient(90deg, #C500B1, #41013B 40%);
+}
+.main-content .premium-banner h2 {
+  font-weight: 200;
+  font-size: 1.5em;
+}
+.main-content .premium-banner h2 > .crown-icon {
+  padding-right: 10px;
+}
+.main-content .premium-banner h1 {
+  font-size: 4em;
+  padding: 0 0 30px 0;
+}
+.main-content .premium-banner .premium-banner-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 30px 0 0 0;
+  gap: 10px;
+}
+.main-content .premium-banner .premium-button-1 {
+  background-color: #F055E5;
+  border-radius: 99px;
+  border: none;
+  padding: 10px 30px;
+}
+.main-content .premium-banner .premium-button-1:hover {
+  opacity: 0.8;
+}
+.main-content .premium-banner .premium-button-2 {
+  border:1px solid #F055E5;
+  background-color: transparent;
+  border-radius: 99px;
+  color: #F055E5;
+  padding: 10px 30px;
+}
+.main-content .premium-banner .premium-button-2:hover {
+  border:1px solid #F055E5;
+  background-color: #F055E5;
+  color: #fff;
+}
+.main-content .genre-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: row wrap;
+  gap: 10px;
+}
+.main-content .genre-buttons button{
+  width: 100px;
+  border-radius: 99px;
+  background-color: #3B3B3B;
+  border: none;
+
+}
+.main-content .genre-buttons button:hover{
+  background-color: #F055E5;
 }
