@@ -3,11 +3,32 @@
   padding: 0;
   margin: 0;
 }
+/* TRANSITION EFFECT */
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+
+}
+.fade-exit {
+  opacity: 1;
+  
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+
+}
+/* SIDEBAR STYLE */
 .side-bar{
   height: 100vh;
   background-color: #3B3B3B;
   color: #fff;
-  padding: 30px 20px !important;
+  width: calc(100vw - 80%);
+  padding: 30px 20px;
+  position: fixed;
 }
 .side-bar .brand-name-container{
   display: flex;
@@ -19,6 +40,10 @@
 .side-bar .brand-name-container img{
   width: 80px;
   height: 80px;
+}
+.side-bar .menu-container,
+.side-bar .playlist-container{
+  overflow: hidden;
 }
 .side-bar .menu-container h2,
 .side-bar .playlist-container h2{
@@ -35,8 +60,8 @@
   left: calc(100% + 10px);
   height: 2px;
   width: calc(100% + 50px);
-
 }
+
 .side-bar ul{
   padding-left: 0;
   padding: 20px 0;
@@ -47,35 +72,52 @@
   font-size: 18px;
   padding: 10px 0;
 }
+.side-bar  ul > li:hover{
+  color:#F055E5 ;
+}
 .side-bar ul > li .menu-icon{
   padding-right: 10px;
 }
 .side-bar ul > .add-new-playlist{
   cursor: pointer;
 }
-
+.side-bar .menu-container ul > li {
+  cursor: pointer;
+}
+/* MAIN CONTENT STYLE */
 .main-content{
   background-color: #1F1F1F;
   color: #fff;
   height: 100vh;
+  width: calc(100vw - 20%);
   padding: 30px 50px !important;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .main-content .top-section{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main-content.col-9 > div:nth-child(1) .search-bar-container > input{
+.main-content input{
   max-width: 300px;
   border: none;
   border-radius: 99px;
   background-color: #3B3B3B;
   color: #fff;
+  padding-left: 30px;
 }
-.main-content.col-9 > div:nth-child(1) .search-bar-container > input::placeholder{
+.main-content input:focus{
+  border: none;
+  background-color: #3B3B3B;
+  color: #fff;
+  box-shadow: none;
+}
+
+.main-content input::placeholder{
   color: #fff;
   font-size: 12px;
-  padding-left: 20px;
   vertical-align: middle;
 }
 
@@ -120,23 +162,24 @@
   margin: 30px 0 0 0;
   gap: 10px;
 }
-.main-content .premium-banner .premium-button-1 {
+.main-content .button-1 {
   background-color: #F055E5;
   border-radius: 99px;
   border: none;
   padding: 10px 30px;
 }
-.main-content .premium-banner .premium-button-1:hover {
+.main-content .button-1:hover {
+  background-color: #F055E5;
   opacity: 0.8;
 }
-.main-content .premium-banner .premium-button-2 {
+.main-content .button-2 {
   border:1px solid #F055E5;
   background-color: transparent;
   border-radius: 99px;
   color: #F055E5;
   padding: 10px 30px;
 }
-.main-content .premium-banner .premium-button-2:hover {
+.main-content .button-2:hover {
   border:1px solid #F055E5;
   background-color: #F055E5;
   color: #fff;
@@ -153,8 +196,64 @@
   border-radius: 99px;
   background-color: #3B3B3B;
   border: none;
-
 }
 .main-content .genre-buttons button:hover{
   background-color: #F055E5;
+}
+
+/* LOGIN STYLES */
+.main-content .login-container{
+  padding: 0;
+  margin: 10% auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 50vw;
+  height: 30vw;
+}
+.main-content .login-container .login-input-form{
+  background-color: #3b3b3b50;
+  height: 100%;
+  width: 50%;
+  padding: 10% 30px;
+}
+.main-content .login-container .login-input-form h2{
+  padding-bottom: 30px ;
+}
+.main-content .login-container .login-input-form .login-input-container{
+  position: relative;
+  max-width: 300px;
+}
+.main-content .login-container .login-input-form .login-input-container .input-icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(13px, 13px);
+  font-size: 12px;
+}
+.main-content .login-container .login-input-form .login-input-container .show-hide-icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-13px, 9px);
+  font-size: 12px;
+}
+.main-content .login-container .login-buttons{
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction: row;
+padding: 20px 30px 0 0;
+}
+.main-content .login-container .login-buttons .input-check input{
+padding-left: 0;
+}
+.main-content .music-bg{
+  background-image: url('./assets/img/login-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
 }
